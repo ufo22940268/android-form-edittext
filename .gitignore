@@ -25,3 +25,7 @@ library/build.xml
 
 # Local configuration file (sdk path, etc)
 local.properties
+
+*/target
+*/tags
+tags

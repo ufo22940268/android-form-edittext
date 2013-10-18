@@ -126,7 +126,7 @@ public class FormEditText extends EditText {
 
         // only for JB 4.2 and 4.2.1
         if (android.os.Build.VERSION.SDK_INT != Build.VERSION_CODES.JELLY_BEAN
-                && android.os.Build.VERSION.SDK_INT != Build.VERSION_CODES.JELLY_BEAN_MR1)
+                && android.os.Build.VERSION.SDK_INT != Build.VERSION_CODES.JELLY_BEAN)
             return;
 
         try {
