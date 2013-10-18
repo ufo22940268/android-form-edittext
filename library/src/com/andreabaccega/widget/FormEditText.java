@@ -11,7 +11,9 @@ import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.KeyEvent;
 import android.widget.EditText;
+import android.content.res.TypedArray;
 
+import com.andreabaccega.formedittext.R;
 import com.andreabaccega.formedittextvalidator.Validator;
 
 /**
@@ -20,6 +22,9 @@ import com.andreabaccega.formedittextvalidator.Validator;
  * @author Andrea Baccega <me@andreabaccega.com>
  */
 public class FormEditText extends EditText {
+
+    private String mKey;
+
     public FormEditText(Context context) {
         super(context);
         // FIXME how should this constructor be handled
@@ -28,14 +33,21 @@ public class FormEditText extends EditText {
 
     public FormEditText(Context context, AttributeSet attrs) {
         super(context, attrs);
+		TypedArray typedArray = context.obtainStyledAttributes( attrs, R.styleable.FormEditText );
+		mKey = typedArray.getString(R.styleable.FormEditText_key);
+		typedArray.recycle();
         editTextValidator = new DefaultEditTextValidator(this, attrs, context);
     }
 
     public FormEditText(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         editTextValidator = new DefaultEditTextValidator(this, attrs, context);
-
     }
+
+    public String getKey() {
+       return mKey; 
+    }
+    
 
     /**
      * Add a validator to this FormEditText. The validator will be added in the

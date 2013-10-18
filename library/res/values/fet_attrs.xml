@@ -25,6 +25,7 @@
 		<attr name="customFormat" format="string" />
 		<attr name="emptyAllowed" format="boolean" />
 		<attr name="classType" format="string" />
+		<attr name="key" format="string" />
 	</declare-styleable>
 
 </resources>
